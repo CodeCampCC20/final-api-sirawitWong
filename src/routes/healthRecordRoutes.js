@@ -10,10 +10,10 @@ import { authCheckUser } from "../middleware/authMiddleware.js"
 
 const router = express.Router()
 
-router.post("/health-records", authCheckUser, createHealthRecord)
-router.get("/health-records", authCheckUser, getAllHealthRecord)
-router.get("/health-records/:id", authCheckUser, getRecordById)
-router.patch("/health-records/:id", authCheckUser, editRecord)
-router.delete("/health-records/:id", authCheckUser, deleteRecord)
+router.post("/", authCheckUser, createHealthRecord)
+router.get("/", authCheckUser, getAllHealthRecord)
+router.get("/:id", authCheckUser, getRecordById)
+router.patch("/:id", authCheckUser, editRecord)
+router.delete("/:id", authCheckUser, deleteRecord)
 
 export default router
